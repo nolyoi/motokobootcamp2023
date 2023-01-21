@@ -1,21 +1,8 @@
-1. Write a function unique that takes a list l of type List and returns a new list with all duplicate elements removed.
+1. Is the heap memory saved when upgrading a canister? How much heap memory does a canister has?
+It can be. 4GB. You are actually limited to around 2Gb of heap memory if you want to use the upgrade hooks.
+
+2. How much accounts can a unique Principal own?
 
 
-5.
-import HashMap "mo:base/HashMap";
-import Iter "mo:base/Iter";
-import Principal "mo:base/Principal";
-actor {
-   
-    stable var usernames : [HashMap.HashMap<Principal, Text>] = [];
-  
-    var proposal_buff = Buffer.fromArray<Types.Proposal>(proposals);
-
-    public shared ({ caller }) func add_username(name : Text) : async () {
-      usernames.put(caller, name);
-    };
-
-    public query func get_usernames() : async [(Principal, Text)] {
-      usernames;
-    };
-};
+3. Can we safely upgrade a canister from interface A to interface B?
+Yes
